@@ -17,6 +17,16 @@ public:
 	{
 		if (m_psl == NULL)
 			m_psl = new Singleton();
+		
+		//上面代码多线程下会有问题，一般加锁再加二次判断
+		/*
+		if (m_psl == NULL) 
+		{
+			lock();
+			if (m_psl == NULL)
+				m_psl = new Singleton();
+			unlock();
+		}*/
 
 		return m_psl;
 	}

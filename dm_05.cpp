@@ -18,8 +18,11 @@ public:
 
 	static void freeInstance()
 	{
-		delete m_psl;
-		m_psl = NULL;
+		if (m_psl != NULL)
+		{
+			delete m_psl;
+			m_psl = NULL;
+		}
 	}
 
 private:
