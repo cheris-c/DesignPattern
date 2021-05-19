@@ -6,8 +6,8 @@ using namespace std;
 //懒汉式单例
 class Singleton
 {
-private:	Singleton()
-
+private:	
+	Singleton()
 	{
 		cout << "Singleton constructor called!" << endl;
 	}
